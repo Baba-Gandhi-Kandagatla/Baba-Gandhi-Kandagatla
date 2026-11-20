@@ -1,9 +1,13 @@
-# Hi, I’m Baba Gandhi.
+# Baba Gandhi Kandagatla
 
-In my first year of engineering, I helped turn a batch of exam results into one spreadsheet. It saved us from looking up each student’s grades one page at a time.
+Backend engineer at Nasuni · Hyderabad
 
-Later, during campus placements, I knew how hard it was to tell whether I was ready for an interview. That’s why I helped build [SkillSage](https://github.com/Baba-Gandhi-Kandagatla/SkillSage) with three classmates. We wanted students to build confidence by practicing, reading feedback on each answer and trying again. Faculty could look across a batch, see where students were getting stuck and decide what to spend more time teaching.
+## What I build for
 
-Today I build backend services at Nasuni. In my own projects, I still enjoy the small design questions, like what should happen in Orbit tomorrow when I check off a habit today.
+**Give people their time back.** Looking up one student’s exam result takes a few clicks. Multiply that by a whole batch and those clicks add up. I helped build a tool that collects the grades in one spreadsheet. Saving someone a repetitive job is reason enough for me to write the code.
+
+**Make feedback useful.** The question I cared about during campus placements was *what should I practice next?* My teammates and I built [SkillSage](https://github.com/Baba-Gandhi-Kandagatla/SkillSage) to help students build confidence by working on specific answers. Faculty can see where several students struggled and decide which topics deserve another class.
+
+**Keep the small things simple.** In Orbit, checking off a task means it’s finished. Checking off a habit means I did it today. I gave each its own rules and put them in one daily view, so the planner fits the way I actually use it.
 
 [LinkedIn](https://www.linkedin.com/in/baba-gandhi-kandagatla) · [My research on sentiment classification](https://doi.org/10.1109/ETCOM66606.2025.11436537)

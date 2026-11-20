@@ -1,11 +1,11 @@
-# Baba Gandhi Kandagatla
+# Hi, I’m Baba Gandhi.
 
-I’m a software engineer at Nasuni in Hyderabad. I build backend services and cloud infrastructure. At Eventbrite, I worked on authentication and the reliability of sign-in flows.
+One of the most interesting bugs I worked on at Eventbrite came down to a percent sign. A URL component had already been encoded. Encoding it again changed what the sign-in flow received.
 
-## Selected work
+![Illustrative example of double encoding. The input “sign in” becomes “sign%20in” on the first pass and “sign%2520in” on the second.](assets/url-encoding.svg)
 
-- **[SkillSage](https://github.com/Baba-Gandhi-Kandagatla/SkillSage)** — I co-developed the backend for a college interview platform that uses a student’s résumé and earlier answers to shape the next question.
-- **[OU Grade Retrieval](https://github.com/Baba-Gandhi-Kandagatla/Result_Automation)** — A first-year project that helps colleges collect exam results in parallel and turn them into one Excel workbook.
-- **[Breast ultrasound research](https://github.com/Baba-Gandhi-Kandagatla/breast_tumor_detection_vr)** — Classification and segmentation experiments, with sample predictions and per-image evaluation results.
+Today I work on backend services and cloud infrastructure at Nasuni. I like problems I can follow end to end, from the request a user makes to the signal an engineer sees when something goes wrong.
 
-[LinkedIn](https://www.linkedin.com/in/baba-gandhi-kandagatla) · [IEEE publication on sentiment classification](https://doi.org/10.1109/ETCOM66606.2025.11436537)
+**On the research side**, I co-authored a study comparing how text representations affect sentiment classification. We looked at F1, AUC and training time alongside accuracy. [Read the IEEE paper](https://doi.org/10.1109/ETCOM66606.2025.11436537)
+
+[Find me on LinkedIn](https://www.linkedin.com/in/baba-gandhi-kandagatla)

@@ -28,7 +28,7 @@ function card(p) {
   return `<article class="card${lead ? ' featured' : ''}" id="${p.id}">
   <div class="card-copy"><div class="project-heading"><div><small>${lead?'Featured project · AI interview platform':esc(category)}</small>
   <h3>${esc(title(p))}</h3></div><div class="cover art">${image(p.coverImage,!lead)}</div></div>
-  <p>${esc(p.description)}</p><p class="highlight">${icon('pulse')}${esc(p.highlight)}</p>${tags(p.techStack)}<div class="actions">
+  <p class="card-description">${esc(p.description)}</p><p class="card-summary">${esc(p.shortDescription)}</p><p class="highlight">${icon('pulse')}${esc(p.highlight)}</p>${tags(p.techStack)}<div class="actions">
   <button class="details-button" aria-haspopup="dialog" aria-controls="detail-${p.id}">View details</button>
   <a href="${esc(p.links.github)}" aria-label="${esc(title(p))} on GitHub">${icon('branch')} GitHub</a></div></div></article>`;
 }
@@ -57,6 +57,16 @@ function recommendationCard(r) {
     <span class="recommendation-source" id="source-${r.id}">View recommendations on LinkedIn</span></a>`;
 }
 const fold = (name,body) => `<details><summary>${esc(name)}</summary><div class="fold">${body}</div></details>`;
+function mobileToggle(target, more, less) {
+  return `<button type="button" class="mobile-toggle" aria-controls="${target}" aria-expanded="false" data-more="${more}" data-less="${less}">${more}</button>`;
+}
+function job(e) {
+  const bullets = e.description.split('•').map(x => x.trim()).filter(Boolean);
+  const id = 'work-' + e.id;
+  return `<article class="job"><div><small>${esc(e.duration)}</small><h3>${esc(e.organization)}</h3></div><div><h4>${esc(e.title)}</h4>
+    <ul id="${id}" data-preview="1">${bullets.map(x => '<li>'+esc(x)+'</li>').join('')}</ul>
+    ${mobileToggle(id, 'More about this role', 'Show less')}</div></article>`;
+}
 const resumePath = './resume/Baba_Gandhi_Kandagatla_Resume.pdf';
 const resumeButton = `<a class="outline" href="${resumePath}" download>Download resume <span class="file-type">PDF</span></a>`;
 const featuredProject = projects.find(p => p.placement === 'featured');
@@ -70,18 +80,18 @@ const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta n
 <p class="intro">I build backend services and cloud infrastructure at <strong>Nasuni</strong>. My projects explore applied AI, from adaptive interviews to learning tools.</p>
 <div class="hero-links"><a class="primary" href="#projects">${icon('layers')}View projects</a>${resumeButton}</div></div>
 <figure class="portrait"><div class="mat"><div class="photo"><img src="./img/profile.jpeg" alt="Baba Gandhi Kandagatla"></div></div><figcaption>${icon('pin')}${person.location}</figcaption></figure></section>
-<section id="projects" class="section"><div class="heading"><h2>Selected projects</h2><span>${projects.length} projects</span></div>${card(featuredProject)}<div class="grid">${projects.filter(p => p !== featuredProject).map(card).join('')}</div></section>
-<section class="section" id="experience"><h2>Experience</h2>${experiences.map(e=>`<article class="job"><div><small>${esc(e.duration)}</small><h3>${esc(e.organization)}</h3></div><div><h4>${esc(e.title)}</h4>${list(e.description.split('•').map(x=>x.trim()).filter(Boolean))}</div></article>`).join('')}
+<section id="projects" class="section"><div class="heading"><h2>Selected projects</h2><span>${projects.length} projects</span></div>${card(featuredProject)}<div class="grid" id="supporting-projects" data-preview="2">${projects.filter(p => p !== featuredProject).map(card).join('')}</div>${mobileToggle('supporting-projects','Show 4 more projects','Show fewer projects')}</section>
+<section class="section" id="experience"><h2>Experience</h2>${experiences.map(job).join('')}
 </section>
 <section class="section" id="recommendations" aria-labelledby="recommendations-heading"><h2 id="recommendations-heading">LinkedIn recommendations</h2>
-<div class="recommendation-grid">${recommendations.map(recommendationCard).join('')}</div></section>
+<div class="recommendation-grid" id="recommendation-list" data-preview="2">${recommendations.map(recommendationCard).join('')}</div>${mobileToggle('recommendation-list','Show 2 more recommendations','Show fewer recommendations')}</section>
 <section class="section" id="about"><div class="about-lead"><div><h2>About me</h2><p>${esc(person.summary)}</p></div>
 <article class="degree"><small>Education · 2022–2026</small><h3>${esc(edu.degree)}</h3><p>${esc(edu.institution)}</p><div class="grade"><strong>${esc(edu.gpa)}</strong> CGPA</div></article></div>
 <div class="about-row"><h3>Research</h3><div class="research-list"><article><small>${pub.conference} · ${pub.date}</small>
 <h4><a href="${pub.publicationUrl}">${esc(pub.title)}</a></h4><p>${esc(pub.contribution)}</p>
 ${fold('Authors and certificate',`<p>${esc(pub.authors.join(', '))}</p><a href="${pub.certificateImage}">Presentation certificate</a>`)}
 </article><article><small>Published patent application · India</small><h4>${esc(patent.title)}</h4><p>Application ${patent.applicationNumber} · Filed ${patent.filingDate}</p></article></div></div>
-<div class="about-row"><h3>Technical skills</h3><div class="skill-list">${skills.map(s=>`<div><h4>${esc(s.category)}</h4><p>${esc(s.items.join(' · '))}</p></div>`).join('')}</div></div>
+<div class="about-row"><h3>Technical skills</h3><div><div class="skill-list" id="skill-groups" data-preview="3">${skills.map(s=>`<div><h4>${esc(s.category)}</h4><p>${esc(s.items.join(' · '))}</p></div>`).join('')}</div>${mobileToggle('skill-groups','View all technical skills','Show fewer skills')}</div></div>
 <div class="about-row"><h3>Recognition</h3><div class="recognition-list">${achievements.filter(x=>['utkrishti-puraskar','recognition-result-automation','hackathon-enginerd-kmit'].includes(x.id)).map(x=>`<article><small>${esc(x.date)}</small><h4>${esc(x.title)}</h4><p>${esc(x.description)}</p></article>`).join('')}
 </div></div>
 <div class="community"><h3>Community roles</h3><div class="community-grid">${leadership.map(role => `<article><small>${esc(role.duration)}</small><h4>${esc(role.organization)}</h4><p class="community-role">${esc(role.title)}</p><p>${esc(role.description)}</p></article>`).join('')}</div></div></section>

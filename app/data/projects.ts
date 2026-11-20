@@ -17,6 +17,7 @@ export interface Project {
     id: string;
     title: string;
     description: string;
+    shortDescription: string;
     techStack: string[];
     highlight?: string;
     coverImage: ProjectImage;
@@ -36,6 +37,7 @@ export const projects: Project[] = [
         "id": "skillsage",
         "title": "SkillSage - AI Interview Platform",
         "description": "Colleges can run mock interviews for an entire batch, starting with shared questions and adapting follow-ups to each student’s resume and answers. Students revisit feedback on individual answers, while faculty review results across the batch.",
+        "shortDescription": "A college mock interview platform that adapts follow-up questions to each student’s resume and answers. Students review feedback, and faculty can see how a batch performed.",
         "techStack": [
             "React",
             "TypeScript",
@@ -179,6 +181,7 @@ export const projects: Project[] = [
         "id": "orbit",
         "title": "Orbit",
         "description": "Orbit brings scheduled tasks and recurring habits into one daily view. A reader can set a weekly reading goal, log pages each day, and see that history on a chart. Plans stay in the browser, with optional sync across devices.",
+        "shortDescription": "A daily planner for tasks and recurring habits. Track progress locally or sync it across devices.",
         "techStack": [
             "JavaScript",
             "Progressive Web App",
@@ -259,6 +262,7 @@ export const projects: Project[] = [
         "id": "skill-forge",
         "title": "Skill Forge",
         "description": "Students enter a learning goal and what they already know to get a visual roadmap of topics to study next. Teachers organize each topic into a lesson with readings, videos, and a quiz so students can check their understanding as they go.",
+        "shortDescription": "A learning platform that turns a student’s goals and prior knowledge into a topic roadmap, with lessons and quizzes along the way.",
         "techStack": [
             "MongoDB",
             "Express",
@@ -350,6 +354,7 @@ export const projects: Project[] = [
         "id": "breast-cancer-detection",
         "title": "Breast Cancer Detection Using AI & VR",
         "description": "This research compares two tasks on breast ultrasound imagery. ViT and EfficientNet classify masses, while U-Net and UNETR predict their boundaries. Viewing the scan, mask, and overlay together makes it easier to inspect where the model drew the outline.",
+        "shortDescription": "A study comparing vision models for classifying breast ultrasound masses and tracing their boundaries.",
         "techStack": [
             "Deep Learning",
             "Vision Transformers",
@@ -433,6 +438,7 @@ export const projects: Project[] = [
         "id": "quiz-generator",
         "title": "Interactive Quiz Generator",
         "description": "QuizCraft retrieves passages from a Word document on a chosen topic and passes that context to Phi-3.5 Mini. The question form supports formats such as multiple choice and short answer. The prototype’s current output limit is documented in the project details.",
+        "shortDescription": "A quiz-generation prototype that retrieves relevant passages from Word documents and sends them to Phi-3.5 Mini.",
         "techStack": [
             "MERN Stack",
             "FastAPI",
@@ -495,6 +501,7 @@ export const projects: Project[] = [
         "id": "ou-grade-retrieval",
         "title": "OU Grade Retrieval Automation",
         "description": "College staff can enter a roll-number range or upload a CSV to collect Osmania University exam results for a batch. Parallel requests retrieve the individual results and compile them into one Excel workbook for review.",
+        "shortDescription": "A tool for collecting Osmania University results by roll number and combining a batch of grades into one spreadsheet.",
         "techStack": [
             "Python",
             "Web Scraping",
@@ -555,6 +562,7 @@ export const projects: Project[] = [
         "id": "birthday-app",
         "title": "Birthday Wishing App",
         "description": "This astronomy-themed app opens with a personal greeting on the recipient’s birthday. On other days, it shows NASA’s astronomy picture of the day and a personal to-do list, giving the gift a use throughout the year.",
+        "shortDescription": "A personal birthday greeting that becomes an astronomy companion and to-do list for the rest of the year.",
         "techStack": [
             "Flutter",
             "Dart",

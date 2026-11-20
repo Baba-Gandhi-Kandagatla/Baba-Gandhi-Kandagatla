@@ -50,3 +50,17 @@ for (const controls of document.querySelectorAll('.gallery-controls')) {
     gallery.scrollBy({ left: distance * step });
   });
 }
+
+for (const toggle of document.querySelectorAll('.mobile-toggle')) {
+  const group = document.getElementById(toggle.getAttribute('aria-controls'));
+  const extra = Array.from(group.children).slice(Number(group.dataset.preview));
+  if (!extra.length) continue;
+  extra.forEach(item => item.classList.add('mobile-extra'));
+  toggle.classList.add('ready');
+  toggle.addEventListener('click', () => {
+    const expanded = group.classList.toggle('show-all');
+    toggle.setAttribute('aria-expanded', String(expanded));
+    toggle.textContent = expanded ? toggle.dataset.less : toggle.dataset.more;
+    if (!expanded) toggle.scrollIntoView({ block: 'nearest' });
+  });
+}

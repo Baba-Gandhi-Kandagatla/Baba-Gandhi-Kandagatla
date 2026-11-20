@@ -159,3 +159,34 @@ html:has(dialog[open]) { overflow: hidden; }
 .contact-links .outline { padding: 8px 12px; gap: 8px; border-radius: 6px; text-decoration: none; }
 .hero-links { flex-wrap: wrap; }
 .file-type { font-size: .75rem; color: var(--muted); }
+
+.mobile-toggle, .card-summary { display: none; }
+
+@media (max-width: 650px) {
+  .card-description { display: none; }
+  .card-summary { display: block; }
+  #projects .grid { grid-auto-rows: auto; gap: 16px; }
+  .card-copy { padding: 20px 18px 16px; }
+  .card .actions button, .card .actions a { min-height: 44px; }
+  .card .highlight { background: transparent; padding: 0 0 0 10px; }
+  .card .highlight svg { display: none; }
+  .card .tags li { background: transparent; padding: 0; color: var(--muted); }
+  .card .tags li + li::before { content: "·"; margin-right: 6px; }
+  .hero .portrait { transform: none; box-shadow: none; }
+  .portrait .mat { padding: 0; }
+  .hero .portrait figcaption { padding: 4px 0; }
+  .section { padding-block: 36px; }
+  nav a { min-height: 44px; display: inline-flex; align-items: center; }
+  .recommendation { padding: 20px; }
+  .recommendation blockquote { font-size: 1.06rem; margin-bottom: 16px; }
+  .about-row, .about-lead { gap: 18px; }
+  .community-grid { grid-template-columns: 1fr; gap: 0; }
+  .community-grid article { padding: 18px 0; border: 0; border-bottom: 1px solid var(--line); background: transparent; border-radius: 0; }
+  .contact-panel { display: grid; gap: 18px; }
+  .contact-links { row-gap: 10px; }
+  .mobile-toggle.ready { display: inline-flex; align-items: center; min-height: 44px; margin-top: 10px; padding: 6px 0; background: transparent; color: var(--sage); border: 0; font-weight: 600; }
+  .mobile-toggle.ready::after { content: "+"; margin-left: 8px; }
+  .mobile-toggle[aria-expanded="true"]::after { content: "−"; }
+  [data-preview]:not(.show-all) > .mobile-extra { display: none; }
+  .job ul { margin-bottom: 0; }
+}

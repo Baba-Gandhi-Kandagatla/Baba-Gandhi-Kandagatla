@@ -67,7 +67,8 @@ function job(e) {
     <ul id="${id}" data-preview="1">${bullets.map(x => '<li>'+esc(x)+'</li>').join('')}</ul>
     ${mobileToggle(id, 'More about this role', 'Show less')}</div></article>`;
 }
-const resumePath = './resume/Baba_Gandhi_Kandagatla_Resume.pdf';
+const resumeFile = 'Baba_Gandhi_Kandagatla_Resume.pdf';
+const resumePath = './resume/' + resumeFile;
 const resumeButton = `<a class="outline" href="${resumePath}" download>Download resume <span class="file-type">PDF</span></a>`;
 const featuredProject = projects.find(p => p.placement === 'featured');
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,7 +107,8 @@ const assets = new Set([resumePath,'./img/profile.jpeg',pub.certificateImage,...
 for (const path of assets) {
   const target = join('dist',path);
   await mkdir(dirname(target),{recursive:true});
-  await copyFile(join('public',path),target);
+  const source = path === resumePath ? resumeFile : join('public',path);
+  await copyFile(source,target);
 }
 for (const file of ['style.css','site.js','theme.js']) await copyFile(join('app',file),join('dist',file));
 await writeFile('dist/index.html',html);

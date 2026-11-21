@@ -1,0 +1,204 @@
+\documentclass[letterpaper,10pt]{article}
+
+% Packages
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section headings and space between the rule and section text
+\titleformat{\section}{
+  \scshape\raggedright\normalsize\bfseries
+}{}{0em}{}[\color{black}\titlerule]
+\titlespacing*{\section}{0pt}{5pt}{4pt}
+
+\ifdefined\pdfgentounicode
+  \pdfgentounicode=1
+\fi
+
+%-------------------------
+% Custom commands (updated for consistent font & reduced spacing)
+\newcommand{\resumeItem}[1]{\item\footnotesize{#1\vspace{-1pt}}}
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{-1pt}\item%
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}%
+      \textbf{#1} & \textbf{\footnotesize #2} \\%
+      \textit{\footnotesize #3} & \textit{\footnotesize #4} \\%
+    \end{tabular*}\vspace{-2pt}%
+}
+\newcommand{\resumeProjectHeading}[2]{%
+    \item%
+    \begin{tabular*}{1.0\textwidth}{l@{\extracolsep{\fill}}r}%
+      \footnotesize #1 & \textbf{\footnotesize #2} \\%
+    \end{tabular*}%
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}}
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+% List environments with minimal spacing
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}, itemsep=0pt, topsep=0pt]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[itemsep=0pt, topsep=0pt]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-2pt}}
+
+%-------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    {\Huge \scshape Baba Gandhi Kandagatla} \\ \vspace{1pt}
+    \footnotesize
+    \raisebox{-0.1\height}\faPhone\ +91~8309103893 \quad
+    \href{mailto:babagandhikandagatla@gmail.com}{\raisebox{-0.2\height}\faEnvelope\ \underline{babagandhikandagatla@gmail.com}} \quad
+    \href{https://github.com/Baba-Gandhi-Kandagatla}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/Baba-Gandhi-Kandagatla}} \\[3pt]
+    \href{https://baba-gandhi-kandagatla.github.io/Portfolio/}{\raisebox{-0.2\height}\faGlobe\ \underline{baba-gandhi-kandagatla.github.io/Portfolio/}} \quad
+    \href{https://www.linkedin.com/in/baba-gandhi-kandagatla/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/baba-gandhi-kandagatla}}
+\end{center}
+
+%----------PROFESSIONAL SUMMARY----------
+\section{Professional Summary}
+\footnotesize Software engineer with experience building backend services, cloud infrastructure and AI-powered applications. Currently developing Python services and AWS infrastructure at Nasuni, with prior experience in authentication and observability at Eventbrite. Applied AI work includes adaptive mock interviews and published research on sentiment classification.
+ \vspace{-.5em}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+      {Keshav Memorial Institute of Technology}{2022 -- 2026}
+      {B.Tech in Computer Science Engineering (AI/ML)}{CGPA: 8.06/10.0}
+\resumeSubHeadingListEnd
+\vspace{-.5em}
+
+% %-------RELEVANT COURSEWORK-------
+% \section{Relevant Coursework}\vspace{-2em}
+% \begin{multicols}{4}
+% \begin{itemize}[itemsep=1pt, parsep=1pt]
+%     % \item Operating Systems
+%     % \item Data Structures and Algorithms
+%     \item Natural Language Processing
+%     \item Database Management
+%     % \item Deep Learning
+%     % \item Machine Learning
+%     % \item Cloud Computing
+%     \item Software Engineering
+%     \item Computer Networks
+% \end{itemize}
+% \end{multicols}
+% \vspace{-2em}
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, itemsep=0pt, topsep=0pt]
+    \item \footnotesize \textbf{Languages:} Python, Java, JavaScript, TypeScript, SQL.
+    \item \footnotesize \textbf{Backend \& Web:} Node.js, Express, React, FastAPI, REST APIs.
+    \item \footnotesize \textbf{Applied AI:} NLP, deep learning, transformers, transfer learning, retrieval-augmented generation (RAG).
+    \item \footnotesize \textbf{Cloud \& DevOps:} AWS (Lambda, SNS, IAM, CloudWatch, S3, EC2), Terraform, AWS CDK, Docker, CI/CD.
+    \item \footnotesize \textbf{Databases:} PostgreSQL, MongoDB, Snowflake.
+    \item \footnotesize \textbf{Identity \& Tools:} Auth0, MFA, Git, Playwright, Datadog, Postman.
+\end{itemize}
+\vspace{-.5em}
+%-----------PROFESSIONAL EXPERIENCE-----------
+\section{Professional Experience}
+% Nasuni
+\noindent\textbf{Nasuni} \hfill \textbf{Jul 2026 -- Present} \\
+\textit{Associate Software Engineer} \\
+\begin{itemize}[itemsep=0pt, topsep=2pt, parsep=0pt]
+  \item Built a production Python Lambda and provisioned it with Terraform. It publishes failure details to Amazon SNS for delivery to the relevant Slack channels.
+  \item Develop backend APIs and AWS infrastructure, including Lambda functions, IAM rules and CloudWatch alarms.
+  \item Develop data ingestion collectors and prototype a dashboard migration from Azure to Grafana, covering access, collection, storage and visualization.
+\end{itemize}
+
+% Eventbrite Internship
+\noindent\textbf{Eventbrite} \hfill \textbf{Jul 2025 -- Apr 2026} \\
+\textit{Software Engineer Intern – Identity Team (Privacy \& Attendee Mobile App)} \\
+\begin{itemize}[itemsep=0pt, topsep=2pt, parsep=0pt]
+  \item Reduced weekly URL failures in identity flows by 98\%, from 150,000 to 3,000, by fixing a double-encoding bug.
+  \item Led backend work to migrate web sign-in to Auth0-hosted flows and resolved 90+ authentication and authorization issues, including 30+ high-priority or critical bugs.
+  \item Built CloudWatch dashboards with AWS CDK, added alarms and log analytics for authentication and MFA events, and integrated CI/CD approval workflows.
+\end{itemize}
+
+\vspace{-.5em}
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+  \resumeProjectHeading
+      {\textbf{\href{https://github.com/Baba-Gandhi-Kandagatla/SkillSage}{SkillSage}} \textnormal{(Node.js, Express, PostgreSQL, React, Playwright)}}{Team Project}
+      \resumeItemListStart
+          \resumeItem{Co-developed the backend for college mock interviews with follow-up questions adapted to each student's resume and answers.}
+          \resumeItem{Worked in a four-person team to deliver answer-level feedback for students and cohort reports that help faculty plan what to teach next.}
+      \resumeItemListEnd
+  \vspace{1.5mm}
+  \resumeProjectHeading
+      {\textbf{\href{https://github.com/Baba-Gandhi-Kandagatla/BreastTumorDetectionVR}{Breast Cancer Detection Using AI \& VR}} \textnormal{(PyTorch, Flask, Unreal Engine)}}{Team Project}
+      \resumeItemListStart
+          \resumeItem{Compared ViT and EfficientNet for ultrasound image classification and U-Net and UNETR for breast mass segmentation.}
+          \resumeItem{Explored how to display model predictions alongside ultrasound images and video in Unreal Engine.}
+      \resumeItemListEnd
+  \vspace{1.5mm}
+  \resumeProjectHeading
+      {\textbf{\href{https://github.com/Baba-Gandhi-Kandagatla/Orbit}{Orbit}} \textnormal{(JavaScript, Supabase)}}{Personal Project}
+      \resumeItemListStart
+          \resumeItem{Built a local-first planner with distinct task and habit workflows and optional account sync through Supabase.}
+          \resumeItem{Implemented calendar recurrence, including month-end dates, and added activity history for reviewing habit progress.}
+      \resumeItemListEnd
+\resumeSubHeadingListEnd
+\vspace{-.5em}
+
+%-----------PUBLICATIONS-----------
+\section{Publications}
+\begin{itemize}[leftmargin=0.15in, itemsep=0pt, topsep=0pt]
+    \item \footnotesize \href{https://doi.org/10.1109/ETCOM66606.2025.11436537}{\textbf{A Comparative Evaluation of Contextual and Statistical Text Representations in Deep Sequential Architectures for Multiclass Sentiment Classification}}. IEEE ETCOM 2025, published March 2026. Co-authored the paper and implemented models for the comparison.
+\end{itemize}
+\vspace{-.5em}
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+\begin{itemize}[leftmargin=0.15in, itemsep=0pt, topsep=0pt]
+    \item \footnotesize Published Patent: “Classification \& Segmentation of Breast Cancer in Ultrasound Imagery with 3D Visualization” (Patent Office Journal 26/2025, India).
+    \item \footnotesize 1st Prize, Enginerd Hackathon (KMIT – Software \& Physics) and MJCET Enginerd Hackathon; Finalist, HackXcelerate Hackathon (Microsoft \& Bytexl, CBIT).
+    \item \footnotesize  multiple IQAC recognitions; Top 10 in Hackathon (BVRIT) \& Top 15 in Hackathon (t-Works, MGIT).
+    \item \footnotesize Utkrishti Puraskar at KMIT Awards Day (Mar 2025) for exceptional academic and outperforming 700+ peers.
+    \item \footnotesize Featured in \textit{The Hindu} for leading a community initiative impacting 150+ Families in rural Telangana; Certificates of appreciation from Saksham Telangana \& Streetcause Hyderabad.
+\end{itemize}
+
+
+\vspace{-.5em}
+% -----------LEADERSHIP / EXTRACURRICULAR-----------
+\section{Leadership / Extracurricular}
+\begin{itemize}[leftmargin=0in, label={}, itemsep=0pt, topsep=0pt]
+    \item \footnotesize \textbf{StreetCause KMIT} \hfill \textit{Community Outreach \& Mentorship}
+          \begin{itemize}[leftmargin=0.15in, itemsep=0pt]
+              \resumeItem{Mentored 70 students and raised funds equivalent to 50 passes for village adoption projects near Bhadrachalam.}
+          \end{itemize}
+    \item \footnotesize \textbf{Vachan (Speakers Club)} \hfill \textit{Orientation \& Leadership}
+          \begin{itemize}[leftmargin=0.15in, itemsep=0pt]
+              \resumeItem{Delivered 2 orientation speeches in front of an audience of 1000 people.}
+              \resumeItem{Coordinated and facilitated club events, ensuring seamless communication between 30+ members and leadership, resulting in improved event participation and streamlined operations.}
+          \end{itemize}
+\end{itemize}
+
+\end{document}

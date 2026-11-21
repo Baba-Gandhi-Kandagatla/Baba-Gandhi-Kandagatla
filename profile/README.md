@@ -15,7 +15,7 @@ Start here when a role, project, qualification, or contact detail changes. The p
 ## Reuse the content
 
 - **LinkedIn:** Start the headline with the title in `personalInfo`. Adapt the summary for About, use the dated experience entries for roles, and use each project’s description, contribution, and repository link for Projects. Keep internal college usage separate from simulated test sessions. List the Indian filing as a published application. [LinkedIn profile](https://www.linkedin.com/in/baba-gandhi-kandagatla)
-- **Resume:** Select experience and projects for the target role. Check dates, CGPA, ownership, research status, and quantified results against the career and project files before replacing the PDF. The editable LaTeX working copy lives locally at `private/resume/main.tex`. Keep a personal backup of that folder.
+- **Resume:** Select experience and projects for the target role. Check dates, CGPA, ownership, research status, and quantified results against the career and project files before replacing the PDF. The [editable LaTeX source](../resume/main.tex) is tracked in Git and predates the current PDF. Reconcile its CGPA, project claims, patent status, and community figures against the profile records before exporting a replacement.
 - **Another portfolio:** Run `npm run --silent profile:export > /tmp/baba-profile.json` from the repository root for plain JSON with the bio, work history, projects, research, and recommendations. Image paths in the export resolve relative to [public/](../public/). Copy the assets required by the new site and preserve their alt text.
 
 ## Track a change

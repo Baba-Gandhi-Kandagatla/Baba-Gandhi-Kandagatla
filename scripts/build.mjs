@@ -74,7 +74,7 @@ const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta n
 <title>${person.name} · Software Engineer</title><meta name="description" content="Backend services, cloud infrastructure and applied AI projects by Baba Gandhi Kandagatla.">
 <link rel="icon" href="data:,"><script src="theme.js"></script><link rel="stylesheet" href="style.css"><script defer src="site.js"></script></head>
 <body id="top"><a class="skip" href="#main">Skip to content</a><header><div class="wrap bar"><a class="brand" href="#top"><span class="mark">bg<span>.</span></span>Baba Gandhi</a>
-<nav aria-label="Main"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+<button id="menu-button" aria-controls="main-nav" aria-expanded="false" hidden>Menu</button><nav id="main-nav" aria-label="Main"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
 <button id="theme" aria-label="Dark theme" aria-pressed="false">${icon('sun')}${icon('moon')}</button></div></header>
 <main id="main" class="wrap"><section class="hero"><div><small class="role"><i></i>${person.title}</small><h1>Baba Gandhi<br><em>Kandagatla.</em></h1>
 <p class="intro">I build backend services and cloud infrastructure at <strong>Nasuni</strong>. My projects explore applied AI, from adaptive interviews to learning tools.</p>
@@ -92,9 +92,9 @@ const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta n
 ${fold('Authors and certificate',`<p>${esc(pub.authors.join(', '))}</p><a href="${pub.certificateImage}">Presentation certificate</a>`)}
 </article><article><small>Published patent application · India</small><h4>${esc(patent.title)}</h4><p>Application ${patent.applicationNumber} · Filed ${patent.filingDate}</p></article></div></div>
 <div class="about-row"><h3>Technical skills</h3><div><div class="skill-list" id="skill-groups" data-preview="3">${skills.map(s=>`<div><h4>${esc(s.category)}</h4><p>${esc(s.items.join(' · '))}</p></div>`).join('')}</div>${mobileToggle('skill-groups','View all technical skills','Show fewer skills')}</div></div>
-<div class="about-row"><h3>Recognition</h3><div class="recognition-list">${achievements.filter(x=>['utkrishti-puraskar','recognition-result-automation','hackathon-enginerd-kmit'].includes(x.id)).map(x=>`<article><small>${esc(x.date)}</small><h4>${esc(x.title)}</h4><p>${esc(x.description)}</p></article>`).join('')}
+<div class="about-row mobile-fold"><h3>Recognition</h3><div id="awards" class="recognition-list">${achievements.filter(x=>['utkrishti-puraskar','recognition-result-automation','hackathon-enginerd-kmit'].includes(x.id)).map(x=>`<article><small>${esc(x.date)}</small><h4>${esc(x.title)}</h4><p>${esc(x.description)}</p></article>`).join('')}
 </div></div>
-<div class="community"><h3>Community roles</h3><div class="community-grid">${leadership.map(role => `<article><small>${esc(role.duration)}</small><h4>${esc(role.organization)}</h4><p class="community-role">${esc(role.title)}</p><p>${esc(role.description)}</p></article>`).join('')}</div></div></section>
+<div class="community mobile-fold"><h3>Community roles</h3><div id="community-roles" class="community-grid">${leadership.map(role => `<article><small>${esc(role.duration)}</small><h4>${esc(role.organization)}</h4><p class="community-role">${esc(role.title)}</p><p>${esc(role.description)}</p></article>`).join('')}</div></div></section>
 <section id="contact" class="contact-panel"><div><h2>Get in touch</h2><p>I’d love to hear about backend engineering, cloud infrastructure, or applied AI work.</p>
 <a class="email-link" href="mailto:${person.email}">${icon('mail')}${esc(person.email)}</a></div>
 <div class="contact-links"><a href="${person.links.linkedin}">LinkedIn</a><a href="${person.links.github}">GitHub</a>${resumeButton}</div></section></main>

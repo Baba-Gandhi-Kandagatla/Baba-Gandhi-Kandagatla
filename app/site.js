@@ -64,3 +64,34 @@ for (const toggle of document.querySelectorAll('.mobile-toggle')) {
     if (!expanded) toggle.scrollIntoView({ block: 'nearest' });
   });
 }
+
+const menu = document.getElementById('menu-button');
+const nav = document.getElementById('main-nav');
+menu.hidden = false;
+function closeMenu() {
+  menu.setAttribute('aria-expanded', 'false');
+}
+menu.addEventListener('click', () => {
+  menu.setAttribute('aria-expanded', String(menu.getAttribute('aria-expanded') !== 'true'));
+});
+nav.addEventListener('click', closeMenu);
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
+    closeMenu();
+    menu.focus();
+  }
+});
+for (const section of document.querySelectorAll('.mobile-fold')) {
+  const heading = section.querySelector('h3');
+  const label = document.createElement('span');
+  label.textContent = heading.textContent;
+  const button = document.createElement('button');
+  button.textContent = label.textContent;
+  button.setAttribute('aria-expanded', 'false');
+  button.setAttribute('aria-controls', heading.nextElementSibling.id);
+  button.addEventListener('click', () => {
+    button.setAttribute('aria-expanded', String(section.classList.toggle('expanded-fold')));
+  });
+  heading.replaceChildren(label, button);
+  section.classList.add('collapsible');
+}

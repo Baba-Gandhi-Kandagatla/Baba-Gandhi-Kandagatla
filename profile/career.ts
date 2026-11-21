@@ -66,6 +66,7 @@ export interface Publication {
 export const personalInfo = {
   name: "Baba Gandhi Kandagatla",
   title: "Software Engineer",
+  intro: "I build backend services and cloud infrastructure at Nasuni. My projects explore applied AI, from adaptive interviews to learning tools.",
   summary: "I’m an Associate Software Engineer at Nasuni, where I build backend services and cloud infrastructure. Before that, I worked on sign-in, authorization and monitoring at Eventbrite. My own projects range from college interview software to tools I use to plan my day.",
   email: "babagandhikandagatla@gmail.com",
   location: "Hyderabad, India",

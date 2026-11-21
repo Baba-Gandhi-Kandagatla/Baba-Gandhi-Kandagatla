@@ -1,15 +1,4 @@
-# Local working records and private resume
-/docs/archive/
-/docs/career-record.md
-/docs/image-review.md
-/CODEX_HANDOFF.md
-/main.tex
 .DS_Store
-/docs/
 /dist/
 /node_modules/
-
-# Superseded local concept-art drafts
-/public/imgs/covers/ou-grade-retrieval.png
-/public/imgs/covers/quiz-generator.png
-/public/imgs/covers/skillsage.png
+/private/

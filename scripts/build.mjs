@@ -1,8 +1,8 @@
 import { mkdir, copyFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
-import { projects } from '../app/data/projects.ts';
-import { personalInfo as person, skills, experiences, publications, patents, leadership, achievements } from '../app/data/Personal_info.ts';
-import { recommendations, recommendationsUrl } from '../app/data/recommendations.ts';
+import { projects } from '../profile/projects.ts';
+import { personalInfo as person, skills, experiences, publications, patents, leadership, achievements } from '../profile/career.ts';
+import { recommendations, recommendationsUrl } from '../profile/recommendations.ts';
 
 const esc = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'}[char]));
 const paths = {
@@ -72,20 +72,20 @@ const resumePath = './resume/' + resumeFile;
 const resumeButton = `<a class="outline" href="${resumePath}" download>Download resume <span class="file-type">PDF</span></a>`;
 const featuredProject = projects.find(p => p.placement === 'featured');
 const html = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>${person.name} · Software Engineer</title><meta name="description" content="Backend services, cloud infrastructure and applied AI projects by Baba Gandhi Kandagatla.">
+<title>${esc(person.name)} · ${esc(person.title)}</title><meta name="description" content="Backend services, cloud infrastructure and applied AI projects by Baba Gandhi Kandagatla.">
 <link rel="icon" href="data:,"><script src="theme.js"></script><link rel="stylesheet" href="style.css"><script defer src="site.js"></script></head>
 <body id="top"><a class="skip" href="#main">Skip to content</a><header><div class="wrap bar"><a class="brand" href="#top"><span class="mark">bg<span>.</span></span>Baba Gandhi</a>
 <button id="menu-button" aria-controls="main-nav" aria-expanded="false" hidden>Menu</button><nav id="main-nav" aria-label="Main"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
 <button id="theme" aria-label="Dark theme" aria-pressed="false">${icon('sun')}${icon('moon')}</button></div></header>
 <main id="main" class="wrap"><section class="hero"><div><small class="role"><i></i>${person.title}</small><h1>Baba Gandhi<br><em>Kandagatla.</em></h1>
-<p class="intro">I build backend services and cloud infrastructure at <strong>Nasuni</strong>. My projects explore applied AI, from adaptive interviews to learning tools.</p>
+<p class="intro">${esc(person.intro)}</p>
 <div class="hero-links"><a class="primary" href="#projects">${icon('layers')}View projects</a>${resumeButton}</div></div>
 <figure class="portrait"><div class="mat"><div class="photo"><img src="./img/profile.jpeg" alt="Baba Gandhi Kandagatla"></div></div><figcaption>${icon('pin')}${person.location}</figcaption></figure></section>
-<section id="projects" class="section"><div class="heading"><h2>Selected projects</h2><span>${projects.length} projects</span></div>${card(featuredProject)}<div class="grid" id="supporting-projects" data-preview="2">${projects.filter(p => p !== featuredProject).map(card).join('')}</div>${mobileToggle('supporting-projects','Show 4 more projects','Show fewer projects')}</section>
+<section id="projects" class="section"><div class="heading"><h2>Selected projects</h2><span>${projects.length} projects</span></div>${card(featuredProject)}<div class="grid" id="supporting-projects" data-preview="2">${projects.filter(p => p !== featuredProject).map(card).join('')}</div>${mobileToggle('supporting-projects',`Show ${projects.length - 3} more projects`,'Show fewer projects')}</section>
 <section class="section" id="experience"><h2>Experience</h2>${experiences.map(job).join('')}
 </section>
 <section class="section" id="recommendations" aria-labelledby="recommendations-heading"><h2 id="recommendations-heading">LinkedIn recommendations</h2>
-<div class="recommendation-grid" id="recommendation-list" data-preview="2">${recommendations.map(recommendationCard).join('')}</div>${mobileToggle('recommendation-list','Show 2 more recommendations','Show fewer recommendations')}</section>
+<div class="recommendation-grid" id="recommendation-list" data-preview="2">${recommendations.map(recommendationCard).join('')}</div>${mobileToggle('recommendation-list',`Show ${recommendations.length - 2} more recommendations`,'Show fewer recommendations')}</section>
 <section class="section" id="about"><div class="about-lead"><div><h2>About me</h2><p>${esc(person.summary)}</p></div>
 <article class="degree"><small>Education · 2022–2026</small><h3>${esc(edu.degree)}</h3><p>${esc(edu.institution)}</p><div class="grade"><strong>${esc(edu.gpa)}</strong> CGPA</div></article></div>
 <div class="about-row"><h3>Research</h3><div class="research-list"><article><small>${pub.conference} · ${pub.date}</small>

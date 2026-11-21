@@ -7,3 +7,5 @@ During campus placements, I found it hard to tell which parts of an interview I 
 I’m interested in bringing what I’ve learned about building and running backend services to applied AI. If you’re working on something in that space, feel free to reach out.
 
 [LinkedIn](https://www.linkedin.com/in/baba-gandhi-kandagatla) · [My research on sentiment classification](https://doi.org/10.1109/ETCOM66606.2025.11436537)
+
+<!-- Editing this repository? Start with profile/README.md for the content index and update workflow. -->

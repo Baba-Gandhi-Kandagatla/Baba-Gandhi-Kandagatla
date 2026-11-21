@@ -1,0 +1,12 @@
+{
+  "common": "Use case: stylized-concept. Single landscape 16:9 editorial cover for a software engineering portfolio, one cohesive miniature still life of precision cut and folded heavyweight paper. Seamless midtone warm stone-gray desktop background (#babeb5), graphite, ivory, and a small muted sage green accent (#78917d). Camera slightly above and in front, subtle isometric perspective, diffused studio light from upper left, delicate contact shadows, matte paper grain. Centered composition filling about two thirds of the frame with clear margins on all sides. Forms readable at thumbnail size. No words, letters, numbers, titles, logos, people, color gradients, border, or UI screenshot. Distinct subject: ",
+  "prompts": {
+    "skillsage": "Adaptive interview: an ivory question-mark speech bubble at left branching via two graphite thread paths to differently sized reply bubbles at right; a sage feedback slip bearing a check mark in front.",
+    "orbit": "Daily planner: an open horizontal paper planner, left page with three daily task lines and inset square checkboxes, right page with a seven-dot habit tracker; one curved recurrence arrow wraps the habit marks.",
+    "skill-forge": "Learning path: a folded accordion of paper ascending like three low steps, linked graphite milestones along its top, the completed milestones in sage, a tiny open book at the destination.",
+    "breast-cancer-detection": "Breast ultrasound research: three ordered overlapping imaging plates in an exploded stack. First has a grainy grayscale sonogram fan with a dark irregular oval, second isolates its contour in sage, third aligns the contour to the scan. Abstract study illustration.",
+    "ou-grade-retrieval": "Parallel grade collection: three separate small result slips with horizontal pencil strokes flow side-by-side on three thin graphite tracks into a single larger spreadsheet with crisp columns, sage header row and orderly cells.",
+    "quiz-generator": "Document retrieval to quiz cards: one folded-corner word-processing page with ruled paragraphs and a sage highlighted passage; a narrow paper strip extends from the passage to two quiz cards with circles for multiple-choice answers.",
+    "birthday-app": "Astronomy birthday greeting: an open pop-up birthday card holding a small dimensional crescent moon, ringed planet, scattered graphite stars and a single tiny candle on a folded birthday cake."
+  }
+}
